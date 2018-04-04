@@ -3,7 +3,9 @@
 *.o
 
 // exclude every filename without file extension (mostly the compiled binaries)
-// see: https://stackoverflow.com/a/29031790/6104519
-// from this: https://stackoverflow.com/questions/29031667/regular-expression-to-match-no-extension-file-name-string
-\s*[^.]+$
+// see: https://stackoverflow.com/a/19023985/6104519
+// from: https://stackoverflow.com/questions/19023550/how-do-i-add-files-without-dots-in-them-all-extension-less-files-to-the-gitign
+*
+!/**/
+!*.*
 
