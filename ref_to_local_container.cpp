@@ -29,7 +29,7 @@ void A::rockNRoll() const {
   }
 }
 
-const A* init() {
+void init_and_do_some() {
   using std::cout, std::endl;
 
   vector<string> someWords;
@@ -37,19 +37,15 @@ const A* init() {
   someWords.push_back(string("you"));
 
   cout << "*** initial size of list is: " << someWords.size() << endl;
-  return new A(someWords);
-}
-
-void doSome(const A* a) {
-  a->rockNRoll();
+  const A* ptrA = new A(someWords);
+  ptrA->rockNRoll();
 }
 
 int main(int argc, const char** argv) {
   using std::cerr, std::endl;
 
   try {
-	const A* ptrA = init();
-	doSome(ptrA);
+	init_and_do_some();
   } catch(...) {
 	cerr << "You gotta be kidding, right?" << endl;
   }
